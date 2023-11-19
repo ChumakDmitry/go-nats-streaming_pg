@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .search {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .search__input {
+        height: 40px;
+        width: 300px;
+        background-color: antiquewhite;
+    }
+
+    .search__button {
+        height: 40px;
+        width: 60px;
+        margin-left: 20px;
+    }
+</style>
+<body>
+    <div class="search">
+        <input type="text" class="search__input" placeholder="Type id order">
+        <button class="search__button" onclick="findOrder()">submit</button>
+    </div>
+    <div class="order">
+        <ul class="order__ul">
+            <li>Order UID - {{.OrderUID}}</li>
+            <li>Track number - {{.TrackNumber}}</li>
+            <li>Customer Id - {{.CustomerId}}</li>
+            <li>Delivery service - {{.DeliveryService}}</li>
+            <li>Date created - {{.DateCreated}}</li>
+        </ul>
+    </div>
+</body>
+<script>
+    const findOrder = () => {
+        const orderID = document.getElementsByClassName('search__input')[0].value.trim()
+        if (orderID == "") {
+            alert("Empty input field")
+        } else {
+            window.location = "http://127.0.0.1:4001/" + orderID
+        }
+
+    }
+</script>
+</html>

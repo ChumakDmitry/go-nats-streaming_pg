@@ -1,0 +1,11 @@
+database:
+  host: "localhost"
+  port: 5432
+  user: "admin"
+  password: "rootroot"
+  db_name: "postgres"
+stan:
+  cluster_id: "test-cluster"
+  client_id: "test-client"
+  svr_url: "0.0.0.0:4222"
+  subject: "test-subject"
